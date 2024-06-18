@@ -6,6 +6,7 @@ import Header from './Components/Header'
 import Nav from './Components/Nav'
 // import Nav from './Components/Nav'
 import Articles from './Components/Articles'
+import Body from './Components/Body'
 import ArticleCard from './Components/ArticleCard'
 
 
@@ -20,6 +21,8 @@ const App=()=> {
     <Routes>
     <Route path="/" element={<Nav />} />
     <Route path="/articles" element={<Articles />} />
+    <Route path="/articles/:article_id" element={<Body />} />
+
     {/* <Route path="/" element={<Nav />} /> */}
   
     </Routes>
