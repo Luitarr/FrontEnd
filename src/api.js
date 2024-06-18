@@ -7,3 +7,9 @@ export const getArticles = ()=>{
         return data
 })
 }
+
+export const getArticleById = (article_id) => {
+    return justNews.get(`/articles/${article_id}`).then(({ data }) => {
+      return data;
+    });
+  };

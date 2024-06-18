@@ -15,7 +15,7 @@ useEffect(()=>{
 return (
     <ul>
 {currentArticles.map((article)=>{
-    console.log({article})
+    // console.log({article})
     return <ArticleCard key={article.article_id}  article={article} />
 })}
     </ul>
