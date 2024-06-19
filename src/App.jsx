@@ -4,9 +4,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Header from './Components/Header'
 import Nav from './Components/Nav'
-// import Nav from './Components/Nav'
+import Home from './Components/Home'
 import Articles from './Components/Articles'
 import Body from './Components/Body'
+import Comments from './Components/Comments'
+import CommentBody from './Components/CommentBody'
 import ArticleCard from './Components/ArticleCard'
 
 
@@ -19,9 +21,14 @@ const App=()=> {
     <Header/>
     <Nav />
     <Routes>
-    <Route path="/" element={<Nav />} />
+   
+    <Route path="/" element={<Home />} />
+    <Route path="/home" element={<Home />} />
     <Route path="/articles" element={<Articles />} />
     <Route path="/articles/:article_id" element={<Body />} />
+    <Route path="/articles/:article_id/comments" element={<Comments />} />
+    <Route path="/articles/:article_id/comments/:comment_id" element={<CommentBody />} />
+        
 
     {/* <Route path="/" element={<Nav />} /> */}
   
