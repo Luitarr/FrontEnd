@@ -7,14 +7,15 @@ const Nav =()=>{
          <ul>
                 <li>
                     <Link className="nav_link" to="/home">
-                    home
+                    Home
                     </Link>
                     </li>
                     <li>
                     <Link className="nav_link" to="/articles">
-                    articles
+                    Articles
                     </Link>
                 </li>
+             
                 
             </ul>
 

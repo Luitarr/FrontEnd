@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { useState, useEffect } from 'react';
 import { getArticleById } from '../api';
@@ -6,16 +7,18 @@ import { getArticleById } from '../api';
 const Body = ()=>{
 const {article_id}= useParams()
 const [article, setArticle] = useState([]);
-// console.log(article)
+const [IsLoading,setIsLoading]= useState(false)
+
 
 useEffect(() => {
+  setIsLoading(true)
     getArticleById(article_id).then(({ article }) => {
-        console.log(article)
+    setIsLoading(false)
       setArticle(article);
     });
   }, []);
 
-  if (!article) return <p>Loading...</p>;
+  if (IsLoading) return <p>Loading...</p>;
 
   return (
     <div>
@@ -23,6 +26,7 @@ useEffect(() => {
       <p>{article.body}</p>
       <p>Author: {article.author}</p>
       <p>Topic: {article.topic}</p>
+      <Link to={`/articles/${article_id}/comments`}>View Comments</Link>
     </div>
   );
 
