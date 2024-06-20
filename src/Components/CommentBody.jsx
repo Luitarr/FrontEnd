@@ -28,7 +28,7 @@ useEffect(() => {
       <p>Author: {comment.author}</p>
       <p>Topic: {comment.topic}</p>
       <p>Topic: {comment.created_at}</p>
-      {/* <p>Created At: {new Date(comment.created_at).toLocaleString()}</p> */}
+      <p>Created At: {new Date(comment.created_at).toLocaleString()}</p>
     </div>
   );
 

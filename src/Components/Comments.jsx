@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { getCommentsByArticleId } from "../api";
 import CommentCard from "./CommentCard";
+// import CommentAdder from "./CommentAdder";
 
 
 const Comments = () => {
@@ -20,11 +21,22 @@ const Comments = () => {
     if (IsLoading) return <p>Loading...</p>;
   
     return (
+      // <section>
+    
+      //   <CommentAdder article_id={article_id} setComments={setComments} />
       <ul>
         {comments.map((comment) => (
           <CommentCard key={comment.comment_id} comment={comment} />
         ))}
       </ul>
+
+      // </section>
+         
+ 
+
+      
+  
+
     );
   };
   

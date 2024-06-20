@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useState, useEffect } from 'react';
 import { getArticleById } from '../api';
+import Comments from "./Comments";
 
 const Body = ()=>{
 const {article_id}= useParams()
@@ -26,7 +27,8 @@ useEffect(() => {
       <p>{article.body}</p>
       <p>Author: {article.author}</p>
       <p>Topic: {article.topic}</p>
-      <Link to={`/articles/${article_id}/comments`}>View Comments</Link>
+  <Comments/>
+      {/* <Link to={`/articles/${article_id}/comments`}>View Comments</Link> */}
     </div>
   );
 
