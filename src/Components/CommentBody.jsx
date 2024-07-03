@@ -16,6 +16,7 @@ useEffect(() => {
    
         setIsLoading(true)
       setComment(comment);
+     
     });
   }, [article_id, comment_id]);
 
@@ -27,7 +28,7 @@ useEffect(() => {
       <p>{comment.body}</p>
       <p>Author: {comment.author}</p>
       <p>Topic: {comment.topic}</p>
-      <p>Topic: {comment.created_at}</p>
+      <p>date: {comment.created_at}</p>
       {/* <p>Created At: {new Date(comment.created_at).toLocaleString()}</p> */}
     </div>
   );

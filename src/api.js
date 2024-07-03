@@ -25,3 +25,19 @@ export const getArticleById = (article_id) => {
       return data;
     });
   };
+
+  export const patchArticle =(article_id)=>{
+    const patchBody={inc_votes:1};
+
+      return justNews.patch(`/articles/${article_id}`, patchBody)
+      .then(({data})=>{
+        return data.article
+      })
+ };
+
+ export const postComment =(article_id, newCommentText)=>{
+  const postBody ={author: "grumpy19", body:newCommentText};
+  return justNews.post(`/articles/${article_id}/comments`, postBody).then(({data})=>{
+    return data.comment
+  })
+ }

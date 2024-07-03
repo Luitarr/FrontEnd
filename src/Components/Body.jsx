@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Comments from "./Comments";
+
 
 import { useState, useEffect } from 'react';
 import { getArticleById } from '../api';
@@ -7,6 +9,7 @@ import { getArticleById } from '../api';
 const Body = ()=>{
 const {article_id}= useParams()
 const [article, setArticle] = useState([]);
+const [comments, setComments] = useState([]);
 const [IsLoading,setIsLoading]= useState(false)
 
 
@@ -26,8 +29,15 @@ useEffect(() => {
       <p>{article.body}</p>
       <p>Author: {article.author}</p>
       <p>Topic: {article.topic}</p>
-      <Link to={`/articles/${article_id}/comments`}>View Comments</Link>
+
+      <h2>Comments</h2>
+      
+      {/* <Link to={`/articles/${article_id}/comments`}>View Comments</Link> */}
+      <Comments article_id={article_id} comments={comments} setComments={setComments} />
+      
+     
     </div>
+   
   );
 
 

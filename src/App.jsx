@@ -26,8 +26,8 @@ const App=()=> {
     <Route path="/home" element={<Home />} />
     <Route path="/articles" element={<Articles />} />
     <Route path="/articles/:article_id" element={<Body />} />
-    <Route path="/articles/:article_id/comments" element={<Comments />} />
-    <Route path="/articles/:article_id/comments/:comment_id" element={<CommentBody />} />
+    {/* <Route path="/articles/:article_id/comments" element={<Comments />} />
+    <Route path="/articles/:article_id/comments/:comment_id" element={<CommentBody />} /> */}
         
 
     {/* <Route path="/" element={<Nav />} /> */}
